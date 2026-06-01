@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/healthc/healthc.csproj" />
+    <Project Path="src/telegramBot/telegramBot.csproj" />
+  </Folder>
+  <Project Path="test/test.csproj" />
+</Solution>

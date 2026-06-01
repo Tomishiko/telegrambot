@@ -1,0 +1,5 @@
+**/bin/
+**/obj/
+**/test/
+Dockerfile
+.dockerignore

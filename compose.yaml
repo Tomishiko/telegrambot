@@ -1,0 +1,9 @@
+services:
+  telegrambot:
+    image: tomishiko/telegrambot:latest
+    container_name: telegrambot
+    ports:
+      - 127.0.0.1:8080:80/tcp
+    restart: always
+    env_file:
+      - ./telegrambot.env
