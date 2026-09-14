@@ -43,5 +43,5 @@ public class Chat
     public string? Username { get; set; }
 }
 
-public record WebhookRequestModel(string url);
+public record WebhookRequestModel(string url, string? ip_address = null);
 

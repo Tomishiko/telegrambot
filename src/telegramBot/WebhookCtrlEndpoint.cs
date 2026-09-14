@@ -1,4 +1,5 @@
 namespace telegramBot.Endpoints;
+
 using System.Net.Http.Headers;
 using Microsoft.Extensions.Options;
 using telegramBot.Core;
@@ -23,9 +24,10 @@ public static class WebhookCtrlEndpoint
 
 
         using var content = JsonContent
-            .Create<WebhookRequestModel>(new WebhookRequestModel(url),
-                                         new MediaTypeHeaderValue("application/json"),
-                                         AppJsonContext.Default.Options);
+            .Create(new WebhookRequestModel(url),
+                    AppJsonContext.Default.WebhookRequestModel,
+                    new MediaTypeHeaderValue("application/json"));
+
 
         var response = await client.PostAsync($"{apiHost}/{token}/setWebhook", content);
 
