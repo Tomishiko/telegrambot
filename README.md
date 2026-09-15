@@ -29,9 +29,8 @@ Api__BaseUrl=https://api.telegram.org
 Api__BotToken=YOUR_BOT_TOKEN
 Api__HookUrl=https://your-domain.com/updates
 ```
-The /updates endpoint is the one that is responsible for msg processing, you can leave it as is in configuration or change it with something like nginx to whatever you want and route to /updates on localhost
 
-## Important! To register webhook call GET /ctrl/setWebhook?enabled=true and enabled=false to clear all registered webhooks
+## Important! To register webhook call GET /ctrl/setWebhook?enabled=true or enabled=false to clear all registered webhooks
 
 ## Configuration Parameters
 
