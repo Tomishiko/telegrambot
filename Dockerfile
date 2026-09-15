@@ -42,10 +42,14 @@ WORKDIR /app
 COPY --link --from=build --chown=nonroot:nonroot /app/publish/telegramBot .
 COPY --link --from=build --chown=nonroot:nonroot /src/yt-dlp .
 COPY --link --from=build --chown=nonroot:nonroot /app/publish/hc .
-COPY --from=build /usr/lib/x86_64-linux-gnu/libz.so.1 /usr/lib/x86_64-linux-gnu/libz.so.1
+
+COPY --link --from=build /usr/lib/*-linux-gnu/libgcc_s.so.1 /usr/lib/
+COPY --link --from=build /usr/lib/*-linux-gnu/libstdc++.so.6 /usr/lib/
+COPY --link --from=build /usr/lib/*-linux-gnu/libz.so.1 /usr/lib/
+
+COPY --link --from=denoland/deno:bin --chown=nonroot:nonroot /deno  /usr/bin/deno
 
 
-# Expose the default ASP.NET port
 ENV ASPNETCORE_HTTP_PORTS=80
 ENV PATH="/app:${PATH}"
 EXPOSE 80

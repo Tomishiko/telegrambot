@@ -35,8 +35,9 @@ public class UpdateProcessor
         var attempts = new (string Args, bool RunUpdate, string AudioFormat)[]
         {
             ("-x", false,AudioFormats.Default),
-            ("-x", true,AudioFormats.Default),
-            ("--format m4a", false,AudioFormats.Fallback)
+            ("--js-runtimes deno:/usr/bin/deno -x", false,AudioFormats.Default),
+            ("--js-runtimes deno:/usr/bin/deno -x", true,AudioFormats.Default),
+            ("--js-runtimes deno:/usr/bin/deno --format m4a", false,AudioFormats.Fallback)
         };
 
         foreach (var (args, updateFirst, format) in attempts)
